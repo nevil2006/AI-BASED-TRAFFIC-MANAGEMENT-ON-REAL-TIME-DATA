@@ -1,4 +1,3 @@
-
 import cv2
 from ultralytics import YOLO  
 
@@ -8,10 +7,10 @@ def RGB(event, x, y, flags, param):
         print(f"Mouse moved to: {point}")
 
 # Load YOLO model
-model = YOLO(r"C:\Users\nevil\Desktop\vechile detection\best.pt")
+model = YOLO(r"Model/best.pt")
 
 # Open video file
-cap = cv2.VideoCapture(r"C:\Users\nevil\Desktop\vechile detection\Dataset_3.mp4")
+cap = cv2.VideoCapture(r"Datasets/Dataset_3.mp4")
 
 if not cap.isOpened():
     print("Error: Could not open video file.")
@@ -35,7 +34,7 @@ while cap.isOpened():
     frame = cv2.resize(frame, (screen_width, screen_height))
 
     # Object tracking with YOLO
-    results = model.track(frame, persist=True, device=0)  
+    results = model.track(frame, persist=True, device="cpu")  
     print(results)  
 
     # Annotate frame with detected objects
