@@ -78,7 +78,7 @@ We welcome contributions to enhance the system's capabilities and performance. T
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project's license will be updated soon.
 
 ---
 
